@@ -1,0 +1,18 @@
+---
+# defaults file for ansible-role-win-updates
+win_updates_install: true
+win_updates_enabled: true
+win_updates_reboot: yes
+win_updates_reboot_timeout: 5400
+
+win_updates_category_names: 
+  # - Application
+  # - Connectors
+  - CriticalUpdates
+  # - DefinitionUpdates
+  - SecurityUpdates  
+  # - FeaturePacks
+  # - ServicePacks
+  # - Tools
+  - UpdateRollups
+  - Updates
