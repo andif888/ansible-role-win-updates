@@ -15,4 +15,4 @@ win_updates_category_names:
   # - ServicePacks
   # - Tools
   - UpdateRollups
-  - Updates
+  # - Updates
