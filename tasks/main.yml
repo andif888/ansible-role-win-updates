@@ -14,7 +14,7 @@
     reboot_timeout: "{{ win_updates_reboot_timeout }}"
     state: installed
   register: win_updates_result
-  when: win_updates_install
+  when: win_updates_install |bool
 
 - name: reboot if updates require it
   win_reboot:
@@ -22,7 +22,7 @@
     post_reboot_delay: 10
     pre_reboot_delay: 10
   when:
-    - win_updates_install
+    - win_updates_install |bool
     - win_updates_reboot == 'yes'
     - win_updates_result is defined
     - win_updates_result.reboot_required is defined
