@@ -1,10 +1,25 @@
 ---
 # defaults file for ansible-role-win-updates
+
+# @var win_updates_install:description: Install updates
 win_updates_install: true
+
+# @var win_updates_enabled:description: Enable/disable Windows Updates Service
 win_updates_enabled: true
+
+# @var win_updates_reboot:description: Reboot automatically during updates
 win_updates_reboot: yes
+
+# @var win_updates_reboot_timeout:descrtiption: Maximum reboot timeout
 win_updates_reboot_timeout: 5400
 
+# @var win_updates_skip_optional:description: Skip optional updates
+win_updates_skip_optional: false
+
+# @var win_updates_category_names:description: >
+# Windows Update category names
+# The value * will match all categories
+# @end
 win_updates_category_names: 
   # - Application
   # - Connectors
@@ -16,3 +31,4 @@ win_updates_category_names:
   # - Tools
   - UpdateRollups
   # - Updates
+...
