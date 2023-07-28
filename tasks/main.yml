@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible-role-win-updates
 
-- name: enable windows updates service
+- name: Enable windows updates service
   ansible.windows.win_service:
     name: wuauserv
     start_mode: manual
@@ -23,7 +23,7 @@
   when:
     - win_updates_result is defined
 
-- name: reboot if updates require it
+- name: Reboot if updates require it
   ansible.windows.win_reboot:
     reboot_timeout: "{{ win_updates_reboot_timeout }}"
     post_reboot_delay: 10
@@ -35,7 +35,7 @@
     - win_updates_result.reboot_required is defined
     - win_updates_result.reboot_required
 
-- name: disable windows updates service
+- name: Disable windows updates service
   ansible.windows.win_service:
     name: wuauserv
     start_mode: disabled
