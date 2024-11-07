@@ -12,6 +12,7 @@
     category_names: "{{ win_updates_category_names }}"
     reboot: "{{ win_updates_reboot }}"
     reboot_timeout: "{{ win_updates_reboot_timeout }}"
+    reject_list: "{{ windows_updates_reject_list | default(omit) }}"
     skip_optional: "{{ win_updates_skip_optional }}"
     state: installed
   register: win_updates_result
